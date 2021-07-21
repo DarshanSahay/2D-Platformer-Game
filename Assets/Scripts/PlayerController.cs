@@ -5,19 +5,31 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Animator animator;
+    public float speed;
     private void Update()
     {
         //for movement
 
-        float Speed = Input.GetAxisRaw("Horizontal");
-        animator.SetFloat("Speed", Mathf.Abs(Speed));
+        float Horizontal = Input.GetAxisRaw("Horizontal");
+        MoveCharacter(Horizontal);
+        PlayMovementAnimation(Horizontal);
+    }
+    private void MoveCharacter(float Horizontal)
+    {
+        Vector3 position = transform.position;
+        position.x += Horizontal * speed * Time.deltaTime;
+        transform.position = position;
+    }
+    private void PlayMovementAnimation(float Horizontal)
+    {
+        animator.SetFloat("Speed", Mathf.Abs(Horizontal));
 
         Vector3 scale = transform.localScale;
-        if(Speed < 0)
+        if (Horizontal < 0)
         {
             scale.x = -1f * Mathf.Abs(scale.x);
         }
-        else if(Speed > 0)
+        else if (Horizontal > 0)
         {
             scale.x = Mathf.Abs(scale.x);
         }
@@ -30,17 +42,21 @@ public class PlayerController : MonoBehaviour
 
         if(Jump > 0) 
         {
-            scale.x = Mathf.Abs(scale.x);
+          scale.x = Mathf.Abs(scale.x);
         }
 
         if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            animator.SetBool("Crouch", true);
-        }
+          {
+          animator.SetBool("Crouch", true);
+          }
         else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
-            animator.SetBool("Crouch", false);
+         animator.SetBool("Crouch", false);
         }
 
+        //Mayank sir video refrence code
+
+        //Input.GetAxisRaw("Vertical");
+        //Input.GetKeyDown(KeyCode.Space);
     }
 }
