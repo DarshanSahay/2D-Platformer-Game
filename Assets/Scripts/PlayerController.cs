@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float jump;
     private Rigidbody2D rb2d;
-
+    private float vertical;
     private void Awake()
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
             rb2d.AddForce(new Vector2(0f, jump), ForceMode2D.Force);
         }
     }
-    private void PlayMovementAnimation(float horizontal, float vertical)//adding vertical is showing error
+    private void PlayMovementAnimation(float horizontal,float vertical)//adding vertical is showing error
     {
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
 
@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
 
         //Mayank sir video refrence code (NOT WORKING)
 
-        float vertical = Input.GetAxisRaw("Jump");
+        float Vertical = Input.GetAxisRaw("Jump");
         if(vertical >0)
         {
             animator.SetBool("Jump", true);

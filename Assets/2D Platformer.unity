@@ -197,8 +197,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259042218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: -0.49, z: 0}
-  m_LocalScale: {x: 0.87530696, y: 0.7644688, z: 1}
+  m_LocalPosition: {x: -0.424, y: -0.49, z: 0}
+  m_LocalScale: {x: 13.516317, y: 0.7644688, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -364,7 +364,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1001 &1477620378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -372,6 +372,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4962664787280014879, guid: adaff8b21ad1386469a5730f94f087f4,
+        type: 3}
+      propertyPath: jump
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -4962664787280014879, guid: adaff8b21ad1386469a5730f94f087f4,
+        type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4527374763983838330, guid: adaff8b21ad1386469a5730f94f087f4,
         type: 3}
       propertyPath: m_RootOrder
