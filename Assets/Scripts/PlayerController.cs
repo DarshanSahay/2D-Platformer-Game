@@ -27,15 +27,17 @@ public class PlayerController : MonoBehaviour
         position.x += horizontal * speed * Time.deltaTime;
         transform.position = position;
 
-        if(vertical >0)
-        {
-            animator.SetBool("Jumping", true);
-            rb2d.AddForce(new Vector2(0f, jump), ForceMode2D.Force);
-        }
-        else
-        {
-            animator.SetBool("Jumping", false);
-        }
+        //if(vertical >0)
+        //{
+        //    animator.SetBool("Jumping", true);
+        //    rb2d.AddForce(new Vector2(0f, jump), ForceMode2D.Force);
+        //}
+        //else
+        //{
+        //    animator.SetBool("Jumping", false);
+        //}
+        animator.SetBool("Jumping", vertical>0);
+        rb2d.AddForce(new Vector2(0f, jump), ForceMode2D.Force);
     }
     private void PlayMovementAnimation(float horizontal,float vertical)
     {
