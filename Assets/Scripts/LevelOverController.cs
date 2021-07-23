@@ -20,9 +20,9 @@ public class LevelOverController : MonoBehaviour
                 Debug.Log("Level Finished By the Player");
             }
 
-            else if(collision.gameObject.CompareTag("Fall"))
+            else if(collision.gameObject.CompareTag("Respawn"))
            {
-            Debug.Log("Player Fall Down , Plzz Restart");
+            Debug.Log("Player Fell Down");
             }
         }
     

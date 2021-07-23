@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scripts/Scenes/2D Platformer.unity
     guid: b84006bf6470c99499c01d22a02b88a4
+  - enabled: 1
+    path: Assets/Scripts/Scenes/New Scene.unity
+    guid: fc9e7e11e820bcc4b84aacd74629df19
   m_configObjects: {}
