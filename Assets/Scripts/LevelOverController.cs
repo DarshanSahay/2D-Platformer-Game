@@ -1,14 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelOverController : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void Awake()
     {
-        if (collision.gameObject.GetComponent<PlayerController>() != null)
-        {
-            Debug.Log("Level Finished By the Player");
-        }
+        Debug.Log("Lets start");
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+
+        {
+            if (collision.gameObject.CompareTag("Finish"))
+            {
+                SceneManager.LoadScene(1);
+                Debug.Log("Level Finished By the Player");
+            }
+
+            else if(collision.gameObject.CompareTag("Fall"))
+           {
+            Debug.Log("Player Fall Down , Plzz Restart");
+            }
+        }
+    
+
 }
+
