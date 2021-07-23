@@ -8,10 +8,10 @@ public class PlayerDead : MonoBehaviour
     {
         Debug.Log("Player Dead Script is Working");
     }
-    private void OnTriggerEnter2D (Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
 
     {
-        if(collision.gameObject.CompareTag("Respawn"))
+        if(collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player is Dead");
         }
