@@ -14,6 +14,10 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+        //if(Input.GetButtonDown("Jump"))
+        //{
+        //    GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpVelocity;
+        //}
         //for movement
 
         float horizontal = Input.GetAxisRaw("Horizontal");

@@ -5,20 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class LevelOverController : MonoBehaviour
 {
-    [SerializeField] private string levelname;
-    private void Awake()
-    {
-        Debug.Log("Lets start");
-    }
+    [SerializeField] private string scenename;
 
     private void OnCollisionEnter2D(Collision2D collision)
 
         {
-            Debug.Log("Collision 2D is working");
+            //Debug.Log("Collision 2D is working");
 
             if (collision.gameObject.CompareTag("Player"))
             {
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(scenename);
                 Debug.Log("Level Finished By the Player");
             }
 

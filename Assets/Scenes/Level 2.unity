@@ -356,12 +356,12 @@ PrefabInstance:
     - target: {fileID: 4527374763983838330, guid: adaff8b21ad1386469a5730f94f087f4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 142.4
+      value: 142.3
       objectReference: {fileID: 0}
     - target: {fileID: 4527374763983838330, guid: adaff8b21ad1386469a5730f94f087f4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.4
+      value: 19.6
       objectReference: {fileID: 0}
     - target: {fileID: 4527374763983838330, guid: adaff8b21ad1386469a5730f94f087f4,
         type: 3}
@@ -443,8 +443,8 @@ Transform:
   m_Father: {fileID: 2077276675}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!19719996 &1045428357
-TilemapCollider2D:
+--- !u!61 &1045428357
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -456,9 +456,19 @@ TilemapCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0.00001
+  m_Offset: {x: 14.564098, y: 1.6078281}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.330533, y: 0.14473534}
+  m_EdgeRadius: 0
 --- !u!483693784 &1045428358
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -1068,7 +1078,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
