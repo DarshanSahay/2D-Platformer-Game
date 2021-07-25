@@ -10,7 +10,6 @@ public class LevelOverController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
 
         {
-            //Debug.Log("Collision 2D is working");
 
             if (collision.gameObject.CompareTag("Player"))
             {

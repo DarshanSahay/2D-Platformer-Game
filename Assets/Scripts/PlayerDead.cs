@@ -7,10 +7,6 @@ public class PlayerDead : MonoBehaviour
 {
     [SerializeField]GameObject gameObject;
     [SerializeField] private string sceneName;
-    //public void Start()
-    //{
-    //    Debug.Log("Player Dead Script is Working");
-    //}
     private void OnCollisionEnter2D(Collision2D collision)
 
     {
