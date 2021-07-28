@@ -5,20 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDead : MonoBehaviour
 {
+    public PlayerController pc;
+    private void Awake()
+    {
+      pc.TakeDamage(20);
+    }
     [SerializeField] private string sceneName;
+
     private void OnCollisionEnter2D(Collision2D collision)
 
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
             SceneManager.LoadScene(sceneName);
+
             Debug.Log("Player is Dead");  
         }
-        else if(collision.gameObject.CompareTag("Player"))
-        {
-            Destroy(collision.gameObject);
-            Debug.Log("Chomper Killed Player");
-        }
+        
     }    
 }

@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject MyObject;
+    public int maxHealth = 100;
+    public int currentHealth;
+    public HealthBar healthBar;
     public ScoreController scoreController;
     public Animator animator;
     public float speed;
@@ -14,6 +18,11 @@ public class PlayerController : MonoBehaviour
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
     }
+    private void Start()
+    {
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+    }
     private void Update()
     {
        
@@ -21,6 +30,12 @@ public class PlayerController : MonoBehaviour
         float vertical = Input.GetAxisRaw("Jump");
         MoveCharacter(horizontal,vertical);
         PlayMovementAnimation(horizontal,vertical);
+        
+    }
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
     }
 
     public void PickUpKey()
