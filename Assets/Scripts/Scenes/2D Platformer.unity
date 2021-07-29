@@ -611,7 +611,7 @@ MonoBehaviour:
   anim: {fileID: 480064185}
   speed: 5
   groundDetection: {fileID: 1888432431}
-  currentHealth: 0
+  currentHealth: 100
   maxHealth: 100
   healthBar: {fileID: 1691031628}
 --- !u!50 &480064190
@@ -724,7 +724,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9132a73a3fe248149a641c472a464b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pc: {fileID: 1067285239}
   sceneName: 2D Platformer
 --- !u!61 &946344137
 BoxCollider2D:
@@ -11068,7 +11067,7 @@ PrefabInstance:
     - target: {fileID: -4962664787280014879, guid: adaff8b21ad1386469a5730f94f087f4,
         type: 3}
       propertyPath: sceneName
-      value: PlayerController
+      value: 2D Platformer
       objectReference: {fileID: 0}
     - target: {fileID: -4962664787280014879, guid: adaff8b21ad1386469a5730f94f087f4,
         type: 3}

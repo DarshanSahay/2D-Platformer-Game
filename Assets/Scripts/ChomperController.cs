@@ -13,7 +13,7 @@ public class ChomperController : MonoBehaviour
     private bool movingRight = true;
     public Transform groundDetection;
     
-    public int currentHealth;
+    public int currentHealth = 100;
     public int maxHealth = 100;
     public HealthBar healthBar;
 
@@ -41,23 +41,12 @@ public class ChomperController : MonoBehaviour
                 movingRight = true;
             }
         }
-    }
-                
-
+    }   
     private void OnCollisionEnter2D(Collision2D collision)
-
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             pc.TakeDamage(20);
-            //if(currentHealth <0)
-            //{
-               // Destroy(collision.gameObject);
-                SceneManager.LoadScene(sceneName);
-            //}
-
-
-                Debug.Log("Player is Dead");
         }
 
     }

@@ -2,10 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject MyObject;
     public int maxHealth = 100;
     public int currentHealth;
     public HealthBar healthBar;
@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float jump;
     private Rigidbody2D rb2d;
+    public string sceneName;
+    
     private void Awake()
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
@@ -25,25 +27,33 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-       
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Jump");
         MoveCharacter(horizontal,vertical);
         PlayMovementAnimation(horizontal,vertical);
-        
     }
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        if(currentHealth <= 0)
+        {
+            KillPlayer();
+        }
     }
-
+    public void KillPlayer()
+    {
+        var delay = 1;
+        Destroy(gameObject,delay);
+        animator.SetBool("Death", true);
+        return;
+        //SceneManager.LoadScene(sceneName);
+    }
     public void PickUpKey()
     {
         Debug.Log("Player Picked Up the Key");
         scoreController.IncreaseScore(10);
     }
-
     private void MoveCharacter(float horizontal, float vertical)
     {
         Vector3 position = transform.position;
