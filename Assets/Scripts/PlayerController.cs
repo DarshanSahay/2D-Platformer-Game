@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float jump;
     private Rigidbody2D rb2d;
     public string sceneName;
+    public GameOverController gc;
     
     private void Awake()
     {
@@ -43,11 +44,15 @@ public class PlayerController : MonoBehaviour
     }
     public void KillPlayer()
     {
-        var delay = 1;
-        Destroy(gameObject,delay);
+        //var delay = 1;
+        //Destroy(gameObject,delay);
         animator.SetBool("Death", true);
-        return;
-        //SceneManager.LoadScene(sceneName);
+        gc.PlayerDied();
+        this.enabled = false;
+    }
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(sceneName);
     }
     public void PickUpKey()
     {
