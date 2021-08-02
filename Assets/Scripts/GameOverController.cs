@@ -5,12 +5,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class GameOverController : MonoBehaviour
 {
-    public Button restartButton;
-    private void Awake()
-    {
-        restartButton.onClick.AddListener(RestartLevel);
-    }
-    
     [SerializeField] public string sceneName;
     public void PlayerDied()
     {
@@ -18,10 +12,9 @@ public class GameOverController : MonoBehaviour
     }
     public void RestartLevel()
     {
-     SceneManager.LoadScene(sceneName);
+        
+         SceneManager.LoadScene(sceneName);
+         Time.timeScale = 1f;
     }
-    public void MainMenu()
-    {
-        SceneManager.LoadScene(0);
-    }
+    
 }

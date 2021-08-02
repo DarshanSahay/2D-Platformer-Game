@@ -5,13 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDead : MonoBehaviour
 {
-    [SerializeField] private string sceneName;
-    public PlayerController pc;
+    public GameOverController gc;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            pc.RestartLevel();
+            gc.PlayerDied();
         }       
     }    
 }
